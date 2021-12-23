@@ -1,9 +1,14 @@
 import React from 'react';
-import { fullEquipmentList } from '../data/db';
+import { useSelector } from 'react-redux';
 import AddItemForm from './AddItemForm';
 import ItemRow from './ItemRow';
 
 function InventoryList() {
+  /***** STATES *****/
+  const fullEquipmentList = useSelector(
+    ({ equipmentReducer }) => equipmentReducer.requiredEquipmentList
+  );
+
   return (
     <div>
       <h2>Inventory List</h2>
@@ -20,7 +25,7 @@ function InventoryList() {
         </thead>
         <tbody>
           {fullEquipmentList.map((item, i) => {
-            return [<ItemRow item={item} i={i} key={i} />];
+            return <ItemRow item={item} i={i} key={i} />;
           })}
         </tbody>
       </table>
