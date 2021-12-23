@@ -5,6 +5,8 @@ import AddItemForm from './AddItemForm';
 function InventoryList() {
   return (
     <div>
+      <h2>Inventory List</h2>
+
       <table>
         <thead>
           <tr>

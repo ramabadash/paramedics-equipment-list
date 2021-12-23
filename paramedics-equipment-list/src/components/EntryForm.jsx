@@ -3,7 +3,7 @@ import React from 'react';
 function EntryForm() {
   return (
     <div>
-      <h1>Entrance to the shift</h1>
+      <h2>Entrance to the shift</h2>
       <div>
         <label htmlFor='full-name'>Full name:</label>
         <input type='text' name='full-name' />
