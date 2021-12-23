@@ -20,6 +20,7 @@ function InventoryList() {
 
   const handleSubmit = () => {
     dispatch(submitEquipmentForm(missingItems));
+    navigate('/end');
   };
 
   return (
