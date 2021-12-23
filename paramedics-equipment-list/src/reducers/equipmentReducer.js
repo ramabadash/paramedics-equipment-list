@@ -29,6 +29,8 @@ const equipmentReducer = (state = primaryEquipmentState, { type, payload }) => {
         ...state,
         requiredEquipmentList: filteredArr,
       };
+    case 'SUBMIT_EQUIPMENT_FORM':
+      return { ...state, shiftList: payload.data };
     default:
       return state;
   }

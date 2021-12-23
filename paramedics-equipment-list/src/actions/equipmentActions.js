@@ -21,4 +21,12 @@ const deleteItem = index => {
   };
 };
 
-export { reset, addItem, deleteItem };
+// Submit form with all the missing items
+const submitEquipmentForm = data => {
+  return {
+    type: 'SUBMIT_EQUIPMENT_FORM',
+    payload: { data },
+  };
+};
+
+export { reset, addItem, deleteItem, submitEquipmentForm };

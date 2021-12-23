@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import AddItemForm from './AddItemForm';
 import ItemRow from './ItemRow';
+import { submitEquipmentForm } from '../actions/equipmentActions';
+import { useNavigate } from 'react-router-dom';
 
 function InventoryList() {
   /***** STATES *****/
@@ -9,8 +11,16 @@ function InventoryList() {
   const fullEquipmentList = useSelector(
     ({ equipmentReducer }) => equipmentReducer.requiredEquipmentList
   );
-
   const [missingItems, setMissingItems] = useState([]); // State to all the missing items [{name: "equipment", missing: "80"}, ...]
+
+  /***** FUNCTIONS *****/
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = () => {
+    dispatch(submitEquipmentForm(missingItems));
+  };
 
   return (
     <div>
@@ -40,7 +50,7 @@ function InventoryList() {
         </tbody>
         <AddItemForm numOfEquipment={fullEquipmentList.length} />
       </table>
-      <button>Submit</button>
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
 }
