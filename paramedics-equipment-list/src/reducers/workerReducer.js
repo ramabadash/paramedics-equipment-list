@@ -9,6 +9,9 @@ const workerReducer = (state = primaryWorkerState, { type, payload }) => {
   switch (type) {
     case 'RESET':
       return primaryWorkerState;
+    case 'WORKER_LOGIN':
+      const { fullName, date, ambulanceNumber, shift } = payload;
+      return { fullName, date, ambulanceNumber, shift };
     default:
       return state;
   }
