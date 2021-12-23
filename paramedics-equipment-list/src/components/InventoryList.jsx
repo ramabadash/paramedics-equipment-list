@@ -28,7 +28,7 @@ function InventoryList() {
             return <ItemRow item={item} i={i} key={i} />;
           })}
         </tbody>
-        <AddItemForm />
+        <AddItemForm numOfEquipment={fullEquipmentList.length} />
       </table>
       <button>Submit</button>
     </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../actions/equipmentActions';
 
-function AddItemForm() {
+function AddItemForm({ numOfEquipment }) {
   /***** STATES *****/
   const [itemName, setItemName] = useState('');
   const [fullQuantity, setFullQuantity] = useState('');
@@ -18,7 +18,7 @@ function AddItemForm() {
   return (
     <tfoot>
       <tr>
-        <th>?</th>
+        <th>{numOfEquipment}</th>
         <td>
           <input
             type='text'
