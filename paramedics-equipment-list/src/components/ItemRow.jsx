@@ -1,17 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteItem } from '../actions/equipmentActions';
 
-function ItemRow({ item, i }) {
+function ItemRow({ item, i, setMissingItems }) {
   /***** STATES *****/
   const [currentQuantity, setCurrentQuantity] = useState(0);
 
   /***** FUNCTIONS *****/
   const dispatch = useDispatch();
+
   // Delete item from the form
   const handleDelete = () => {
+    // Filter from full equipment list
     dispatch(deleteItem(i));
+    // Filter from missing list
+    setMissingItems(prevState => {
+      const copyOfArr = [...prevState];
+      return copyOfArr.filter((item, index) => index !== i);
+    });
   };
+
+  // On Current quantity change update two states
+  const handleQuantityChange = e => {
+    const quantity = e.target.value;
+    setCurrentQuantity(quantity);
+
+    // If missing item is already 0
+    if (currentQuantity < item.fullQuantity) {
+      setMissingItems(prevState => {
+        const UpdateItems = [...prevState]; // Copy the array
+        const missingQuantity =
+          item.fullQuantity - quantity < 0 ? 0 : item.fullQuantity - quantity;
+        UpdateItems[i].missing = missingQuantity; // Update the missing quantity of an item
+        return UpdateItems;
+      });
+    }
+  };
+  /***** EFFECT *****/
+  // Build the array with objects {name : ? , missing: ?} for every item on first render
+  useEffect(() => {
+    setMissingItems(prevState => [
+      ...prevState,
+      { name: item.name, missing: Number(item.fullQuantity) },
+    ]);
+  }, []);
+
   return (
     <tr key={i}>
       <td>
@@ -24,9 +57,7 @@ function ItemRow({ item, i }) {
           type='number'
           min={0}
           defaultValue={0}
-          onChange={e => {
-            setCurrentQuantity(e.target.value);
-          }}
+          onChange={handleQuantityChange}
         />
       </td>
       <td>

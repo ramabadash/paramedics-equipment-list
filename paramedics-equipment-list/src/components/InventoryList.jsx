@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import AddItemForm from './AddItemForm';
 import ItemRow from './ItemRow';
 
 function InventoryList() {
   /***** STATES *****/
+  // Get full list from state
   const fullEquipmentList = useSelector(
     ({ equipmentReducer }) => equipmentReducer.requiredEquipmentList
   );
+
+  const [missingItems, setMissingItems] = useState([]); // State to all the missing items [{name: "equipment", missing: "80"}, ...]
 
   return (
     <div>
@@ -25,7 +28,14 @@ function InventoryList() {
         </thead>
         <tbody>
           {fullEquipmentList.map((item, i) => {
-            return <ItemRow item={item} i={i} key={i} />;
+            return (
+              <ItemRow
+                item={item}
+                i={i}
+                key={i}
+                setMissingItems={setMissingItems}
+              />
+            );
           })}
         </tbody>
         <AddItemForm numOfEquipment={fullEquipmentList.length} />
