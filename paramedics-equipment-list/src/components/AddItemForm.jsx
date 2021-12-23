@@ -11,7 +11,12 @@ function AddItemForm({ numOfEquipment }) {
   const dispatch = useDispatch();
   // Add item to state
   const handleAddItem = () => {
-    dispatch(addItem(itemName, fullQuantity));
+    if (!itemName || !fullQuantity) {
+      console.log('missing details');
+      return;
+    } else {
+      dispatch(addItem(itemName, fullQuantity));
+    }
     setItemName('');
     setFullQuantity('');
   };
@@ -32,6 +37,7 @@ function AddItemForm({ numOfEquipment }) {
             type='number'
             placeholder='Full quantity'
             value={fullQuantity ? Number(fullQuantity) : ''}
+            min={0}
             onChange={e => setFullQuantity(e.target.value)}
           />
         </td>
