@@ -13,6 +13,7 @@ function App() {
         <Route path='/' element={<EntryForm />} />
         <Route path='/inventory' element={<InventoryList />} />
       </Routes>
+      {/* <img src='https://c.tenor.com/221ka27UtMoAAAAi/ambulance-hospital.gif' /> */}
     </div>
   );
 }

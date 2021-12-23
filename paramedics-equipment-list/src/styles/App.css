@@ -8,6 +8,7 @@ input,
 button {
   font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
+  text-align: center;
 }
 
 table {

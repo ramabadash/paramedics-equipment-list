@@ -15,7 +15,7 @@ function ItemRow({ item, i }) {
   return (
     <tr key={i}>
       <td>
-        <strong>{i}</strong>
+        <strong>{i + 1}</strong>
       </td>
       <td>{item.name}</td>
       <td>{item.fullQuantity}</td>
@@ -36,10 +36,12 @@ function ItemRow({ item, i }) {
       </td>
       {item.deleteAble ? (
         <td>
-          <button onClick={handleDelete}>DELETE</button>
+          <button onClick={handleDelete}>
+            <i className='far fa-trash-alt'></i>
+          </button>
         </td>
       ) : (
-        ''
+        <td></td>
       )}
     </tr>
   );

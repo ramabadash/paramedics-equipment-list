@@ -18,7 +18,7 @@ function AddItemForm({ numOfEquipment }) {
   return (
     <tfoot>
       <tr>
-        <th>{numOfEquipment}</th>
+        <th>{numOfEquipment + 1}</th>
         <td>
           <input
             type='text'
@@ -38,7 +38,9 @@ function AddItemForm({ numOfEquipment }) {
         <td></td>
         <td></td>
         <td>
-          <button onClick={handleAddItem}>+Add</button>
+          <button onClick={handleAddItem}>
+            <i className='far fa-plus-square'></i> Add
+          </button>
         </td>
       </tr>
     </tfoot>
