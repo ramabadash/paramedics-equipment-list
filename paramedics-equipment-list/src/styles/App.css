@@ -2,3 +2,9 @@ body {
   font-family: 'Ubuntu', sans-serif;
   background-color: rgba(39, 39, 90, 0.74);
 }
+
+input,
+button {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+}
