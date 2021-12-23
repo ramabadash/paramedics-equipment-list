@@ -28,9 +28,9 @@ function InventoryList() {
             return <ItemRow item={item} i={i} key={i} />;
           })}
         </tbody>
+        <AddItemForm />
       </table>
       <button>Submit</button>
-      <AddItemForm />
     </div>
   );
 }

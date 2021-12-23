@@ -2,18 +2,22 @@ import React from 'react';
 
 function AddItemForm() {
   return (
-    <div>
-      <h3>Add new item:</h3>
-      <div>
-        <label htmlFor='item-name'>Item's name:</label>
-        <input type='text' name='item-name' />
-      </div>
-      <div>
-        <label htmlFor='full-quantity'>Full quantity:</label>
-        <input type='number' name='full-quantity' />
-      </div>
-      <button>Add</button>
-    </div>
+    <tfoot>
+      <tr>
+        <th>?</th>
+        <td>
+          <input type='text' placeholder="Item's name" />
+        </td>
+        <td>
+          <input type='number' placeholder='Full quantity' />
+        </td>
+        <td></td>
+        <td></td>
+        <td>
+          <button>+Add</button>
+        </td>
+      </tr>
+    </tfoot>
   );
 }
 

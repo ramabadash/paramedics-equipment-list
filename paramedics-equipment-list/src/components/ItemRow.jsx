@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 function ItemRow({ item, i }) {
   /***** STATES *****/
-  const [fullQuantity, setFullQuantity] = useState(item.fullQuantity);
   const [currentQuantity, setCurrentQuantity] = useState(0);
 
   return (
@@ -23,9 +22,9 @@ function ItemRow({ item, i }) {
         />
       </td>
       <td>
-        {fullQuantity - currentQuantity < 0
+        {item.fullQuantity - currentQuantity < 0
           ? 0
-          : fullQuantity - currentQuantity}
+          : item.fullQuantity - currentQuantity}
       </td>
     </tr>
   );
