@@ -5,19 +5,19 @@ function EntryForm() {
     <div>
       <h1>Entrance to the shift</h1>
       <div>
-        <label for='full-name'>Full name:</label>
+        <label htmlFor='full-name'>Full name:</label>
         <input type='text' name='full-name' />
       </div>
       <div>
-        <label for='ambulance-number'>Ambulance number:</label>
+        <label htmlFor='ambulance-number'>Ambulance number:</label>
         <input type='text' name='ambulance-number' />
       </div>
       <div>
-        <label for='date'>Date:</label>
+        <label htmlFor='date'>Date:</label>
         <input type='date' name='date' />
       </div>
       <div>
-        <label for='shift'>Shift:</label>
+        <label htmlFor='shift'>Shift:</label>
         <select>
           <option value='morning'>Morning</option>
           <option value='evening'>Evening</option>

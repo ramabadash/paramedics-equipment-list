@@ -5,13 +5,15 @@ function InventoryList() {
   return (
     <div>
       <table>
-        <tr>
-          <th>#</th>
-          <th>Item's name</th>
-          <th>Full quantity</th>
-          <th>Current quantity</th>
-          <th>Missing</th>
-        </tr>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Item's name</th>
+            <th>Full quantity</th>
+            <th>Current quantity</th>
+            <th>Missing</th>
+          </tr>
+        </thead>
         <tbody>
           {fullEquipmentList.map((item, i) => {
             return [
