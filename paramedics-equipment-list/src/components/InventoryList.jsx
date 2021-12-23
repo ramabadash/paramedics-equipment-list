@@ -1,6 +1,7 @@
 import React from 'react';
 import { fullEquipmentList } from '../data/db';
 import AddItemForm from './AddItemForm';
+import ItemRow from './ItemRow';
 
 function InventoryList() {
   return (
@@ -19,17 +20,7 @@ function InventoryList() {
         </thead>
         <tbody>
           {fullEquipmentList.map((item, i) => {
-            return [
-              <tr key={i}>
-                <td>{i}</td>
-                <td>{item.name}</td>
-                <td>{item.fullQuantity}</td>
-                <td>
-                  <input type='number' min={0} defaultValue={0} />
-                </td>
-                <td>?</td>
-              </tr>,
-            ];
+            return [<ItemRow item={item} i={i} key={i} />];
           })}
         </tbody>
       </table>
