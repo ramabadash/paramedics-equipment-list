@@ -1,5 +1,6 @@
 import React from 'react';
 import { fullEquipmentList } from '../data/db';
+import AddItemForm from './AddItemForm';
 
 function InventoryList() {
   return (
@@ -22,7 +23,7 @@ function InventoryList() {
                 <td>{item.name}</td>
                 <td>{item.fullQuantity}</td>
                 <td>
-                  <input type='number' min={0} />
+                  <input type='number' min={0} defaultValue={0} />
                 </td>
                 <td>?</td>
               </tr>,
@@ -30,6 +31,8 @@ function InventoryList() {
           })}
         </tbody>
       </table>
+      <button>Submit</button>
+      <AddItemForm />
     </div>
   );
 }
