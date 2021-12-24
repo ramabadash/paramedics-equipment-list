@@ -3,6 +3,7 @@ export const primaryWorkerState = {
   date: new Date(),
   ambulanceNumber: 181,
   shift: 'morning',
+  logged: false,
 };
 
 const workerReducer = (state = primaryWorkerState, { type, payload }) => {
@@ -11,7 +12,7 @@ const workerReducer = (state = primaryWorkerState, { type, payload }) => {
       return primaryWorkerState;
     case 'WORKER_LOGIN':
       const { fullName, date, ambulanceNumber, shift } = payload;
-      return { fullName, date, ambulanceNumber, shift };
+      return { fullName, date, ambulanceNumber, shift, logged: true };
     default:
       return state;
   }

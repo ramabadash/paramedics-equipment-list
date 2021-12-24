@@ -1,12 +1,21 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { reset as resetEquipment } from '../actions/equipmentActions';
 import { reset as resetWorker } from '../actions/workerActions';
 import { useNavigate } from 'react-router-dom';
 // Style
 import '../styles/End.css';
 
-function End() {
+function End({ isLogged }) {
+  /***** STATES *****/
+  // Get is logged
+  const logged = useSelector(({ workerReducer }) => workerReducer.logged);
+
+  /***** EFFECT *****/
+  useEffect(() => {
+    isLogged(logged);
+  });
+
   /***** FUNCTIONS *****/
   const navigate = useNavigate();
 
@@ -37,14 +46,6 @@ function End() {
         alt='ambulance-gif'
         src='https://c.tenor.com/221ka27UtMoAAAAi/ambulance-hospital.gif'
       />
-      <div>
-        {/* <button onClick={NavigateToMissingList} className='show-btn'>
-          Show me the missing items
-        </button>
-        <button onClick={handleEnd} className='end-btn'>
-          End <i className='far fa-times-circle'></i>
-        </button> */}
-      </div>
     </div>
   );
 }

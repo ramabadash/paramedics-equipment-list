@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { reset as resetEquipment } from '../actions/equipmentActions';
@@ -6,12 +6,19 @@ import { reset as resetWorker } from '../actions/workerActions';
 // Style
 import '../styles/MissingItems.css';
 
-function MissingItems() {
+function MissingItems({ isLogged }) {
   /***** STATES*****/
   // Get missing items list from state
   const missingItemsList = useSelector(
     ({ equipmentReducer }) => equipmentReducer.shiftList
   );
+  // Get is logged
+  const logged = useSelector(({ workerReducer }) => workerReducer.logged);
+
+  /***** EFFECT *****/
+  useEffect(() => {
+    isLogged(logged);
+  });
 
   /***** FUNCTIONS *****/
   const navigate = useNavigate();
