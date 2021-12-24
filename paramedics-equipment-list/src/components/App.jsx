@@ -9,7 +9,6 @@ import '../styles/App.css';
 function App() {
   return (
     <div>
-      <h1>Welcome to the shift!</h1>
       <Routes>
         <Route path='/' element={<EntryForm />} />
         <Route path='/inventory' element={<InventoryList />} />

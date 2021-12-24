@@ -4,6 +4,8 @@ import AddItemForm from './AddItemForm';
 import ItemRow from './ItemRow';
 import { submitEquipmentForm } from '../actions/equipmentActions';
 import { useNavigate } from 'react-router-dom';
+// Style
+import '../styles/InventoryList.css';
 
 function InventoryList() {
   /***** STATES *****/
@@ -24,7 +26,9 @@ function InventoryList() {
   };
 
   return (
-    <div>
+    <div className='inventory-list-container'>
+      <h1>Welcome to the shift!</h1>
+
       <h2>Inventory List</h2>
 
       <table>
@@ -51,7 +55,9 @@ function InventoryList() {
         </tbody>
         <AddItemForm numOfEquipment={fullEquipmentList.length} />
       </table>
-      <button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleSubmit} className='submit-btn'>
+        Done <i className='far fa-check-circle'></i>
+      </button>
     </div>
   );
 }

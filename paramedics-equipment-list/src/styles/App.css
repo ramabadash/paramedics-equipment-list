@@ -3,26 +3,7 @@ body {
   background-color: rgba(39, 39, 90, 0.74);
   text-align: center;
 }
-/* 
-input,
-button {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: bold;
+h1 {
   text-align: center;
-  background-color: transparent;
-} */
-
-table {
-  margin: auto;
-  /* border-collapse: collapse; */
+  margin: 1em auto;
 }
-
-/* td {
-  border: 1px solid;
-  padding: 10px;
-}
-
-th {
-  border: 1px solid;
-  padding: 10px;
-} */

@@ -23,7 +23,7 @@ function AddItemForm({ numOfEquipment }) {
   return (
     <tfoot>
       <tr>
-        <th>{numOfEquipment + 1}</th>
+        <th className='index-table'>{numOfEquipment + 1}</th>
         <td>
           <input
             type='text'
@@ -41,11 +41,9 @@ function AddItemForm({ numOfEquipment }) {
             onChange={e => setFullQuantity(e.target.value)}
           />
         </td>
-        <td></td>
-        <td></td>
         <td>
-          <button onClick={handleAddItem}>
-            <i className='far fa-plus-square'></i> Add
+          <button onClick={handleAddItem} className='add-item-btn'>
+            <i className='far fa-plus-square'></i> Add item
           </button>
         </td>
       </tr>

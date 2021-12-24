@@ -47,10 +47,10 @@ function ItemRow({ item, i, setMissingItems }) {
 
   return (
     <tr key={i}>
-      <td>
+      <td className='index-table'>
         <strong>{i + 1}</strong>
       </td>
-      <td>{item.name}</td>
+      <td className='name-table'>{item.name}</td>
       <td>{item.fullQuantity}</td>
       <td>
         <input
@@ -66,13 +66,11 @@ function ItemRow({ item, i, setMissingItems }) {
           : item.fullQuantity - currentQuantity}
       </td>
       {item.deleteAble ? (
-        <td>
-          <button onClick={handleDelete}>
-            <i className='far fa-trash-alt'></i>
-          </button>
-        </td>
+        <span onClick={handleDelete} className='delete-btn'>
+          <i className='far fa-trash-alt'></i>
+        </span>
       ) : (
-        <td></td>
+        <span></span>
       )}
     </tr>
   );

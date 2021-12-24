@@ -30,6 +30,7 @@ function EntryForm() {
 
   return (
     <div className='entry-form-container'>
+      <h1>Welcome to the shift!</h1>
       <h2>Enter your details:</h2>
       <div className='input-form-container'>
         <label htmlFor='full-name'>Full name:</label>
