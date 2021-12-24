@@ -2,26 +2,13 @@
   width: 50vh;
 }
 
-/***** TABLE *****/
-.table-container {
-  position: absolute;
-  top: 5em;
-  width: 50%;
-  left: 25%;
-}
-
-.table-container table {
-  background-color: rgba(146, 25, 25, 0.404);
-}
-
 /***** BUTTONS *****/
 
-.end-container button {
+.end-container li {
   border-radius: 0.5em;
   font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
-  font-size: 1.5em;
-  margin-top: 2em;
+  font-size: 1em;
   padding: 0.25em;
   color: aliceblue;
   cursor: pointer;

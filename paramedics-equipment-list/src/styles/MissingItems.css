@@ -1,0 +1,53 @@
+/***** TABLE *****/
+.table-container {
+  position: absolute;
+  top: 10em;
+  width: 50%;
+  left: 25%;
+}
+
+.table-container table {
+  background-color: rgba(146, 25, 25, 0.404);
+}
+
+/***** LIST *****/
+.navigate-btns {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navigate-btns li {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-left: 0.5em;
+}
+
+.navigate-btns li:hover {
+  background-color: #111;
+}
+
+/***** BUTTONS *****/
+.end-btn-two,
+.back-btn {
+  border-radius: 0.5em;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 0.25em;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.back-btn {
+  background-color: rgb(32, 106, 218);
+}
+
+.end-btn-two {
+  background-color: rgb(146, 25, 25);
+}
