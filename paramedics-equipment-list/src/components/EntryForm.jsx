@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { workerLogin } from '../actions/workerActions';
+//Style
+import '../styles/EntryForm.css';
 
 function EntryForm() {
   /***** STATE *****/
@@ -27,9 +29,9 @@ function EntryForm() {
   };
 
   return (
-    <div>
-      <h2>Entrance to the shift</h2>
-      <div>
+    <div className='entry-form-container'>
+      <h2>Enter your details:</h2>
+      <div className='input-form-container'>
         <label htmlFor='full-name'>Full name:</label>
         <input
           type='text'
@@ -37,7 +39,7 @@ function EntryForm() {
           onChange={e => setFullName(e.target.value)}
         />
       </div>
-      <div>
+      <div className='input-form-container'>
         <label htmlFor='date'>Date:</label>
         <input
           type='date'
@@ -45,7 +47,7 @@ function EntryForm() {
           onChange={e => setDate(e.target.value)}
         />
       </div>
-      <div>
+      <div className='input-form-container'>
         <label htmlFor='ambulance-number'>Ambulance number:</label>
         <input
           type='number'
@@ -53,7 +55,7 @@ function EntryForm() {
           onChange={e => setAmbulanceNumber(e.target.value)}
         />
       </div>
-      <div>
+      <div className='input-form-container'>
         <label htmlFor='shift'>Shift:</label>
         <select onChange={e => setShift(e.target.value)}>
           <option value='morning'>Morning</option>
@@ -61,7 +63,9 @@ function EntryForm() {
           <option value='night'>Night</option>
         </select>
       </div>
-      <button onClick={handleSubmit}>Continue to inventory list</button>
+      <button onClick={handleSubmit}>
+        Continue to inventory list <i className='far fa-hand-point-right'></i>
+      </button>
     </div>
   );
 }
