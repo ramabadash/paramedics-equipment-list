@@ -58,7 +58,3 @@
 ### <img src="./README-PICS/end.png"/>
 
 ---
-
-## Bonus:
-
-- Add an area for the employee where he can sign a digital signature.
