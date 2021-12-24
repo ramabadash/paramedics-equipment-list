@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { reset as resetEquipment } from '../actions/equipmentActions';
 import { reset as resetWorker } from '../actions/workerActions';
 import { useNavigate } from 'react-router-dom';
+// Style
+import '../styles/End.css';
 
 function End() {
   /***** STATES *****/
@@ -29,38 +31,44 @@ function End() {
   };
 
   return (
-    <div>
+    <div className='end-container'>
       <h2>ENJOY YOUR SHIFT!</h2>
       <img
         alt='ambulance-gif'
         src='https://c.tenor.com/221ka27UtMoAAAAi/ambulance-hospital.gif'
       />
       <div>
-        <button onClick={toggleShowList}>Show me the missing items</button>
-        <button onClick={handleEnd}>End</button>
+        <button onClick={toggleShowList} className='show-btn'>
+          Show me the missing items
+        </button>
+        <button onClick={handleEnd} className='end-btn'>
+          End <i className='far fa-times-circle'></i>
+        </button>
       </div>
       {/* OPTIONAL SHOW TABLE OF MISSING ITEMS */}
       {showList ? (
-        <table>
-          <thead>
-            <tr>
-              <th>Item's name</th>
-              <th>Missing</th>
-            </tr>
-          </thead>
-          <tbody>
-            {missingItemsList.map((item, index) => {
-              if (item.missing !== 0) {
-                return (
-                  <tr key={index}>
-                    <td>{item.name}</td>
-                    <td>{item.missing}</td>
-                  </tr>
-                );
-              }
-            })}
-          </tbody>
-        </table>
+        <div className='table-container'>
+          <table>
+            <thead>
+              <tr>
+                <th>Item's name</th>
+                <th>Missing</th>
+              </tr>
+            </thead>
+            <tbody>
+              {missingItemsList.map((item, index) => {
+                if (item.missing !== 0) {
+                  return (
+                    <tr key={index}>
+                      <td>{item.name}</td>
+                      <td>{item.missing}</td>
+                    </tr>
+                  );
+                }
+              })}
+            </tbody>
+          </table>
+        </div>
       ) : (
         ' '
       )}

@@ -1,7 +1,11 @@
+/***** HEADER *****/
+
 h2 {
   text-align: center;
   color: aliceblue;
 }
+
+/***** CONTAINERS *****/
 
 .entry-form-container {
   border-radius: 0.25em;
@@ -20,9 +24,13 @@ h2 {
   justify-content: space-between;
 }
 
+/***** TEXT *****/
+
 .entry-form-container label {
   color: aliceblue;
 }
+
+/***** INPUTS *****/
 
 .entry-form-container input {
   border-radius: 0.5em;
@@ -36,6 +44,8 @@ h2 {
   font-family: 'Ubuntu', sans-serif;
 }
 
+/***** BUTTONS *****/
+
 .entry-form-container button {
   border-radius: 0.5em;
   font-family: 'Ubuntu', sans-serif;
@@ -45,4 +55,5 @@ h2 {
   float: right;
   background-color: goldenrod;
   color: aliceblue;
+  cursor: pointer;
 }
