@@ -5,8 +5,8 @@
 ### Technologies in use - 👩‍💻👨‍💻
 
 - **[React](https://reactjs.org/)**
+- **[React Router DOM](https://www.npmjs.com/package/react-router-dom)**
 - **[Redux](https://redux.js.org/)**
-- **[Redux-thunk](https://github.com/reduxjs/redux-thunk)**
 
 #### Packages
 
@@ -44,6 +44,18 @@
 ### The missing items list- 📃❌
 
 - **Only the missing items are displayed and how much is missing**
+
+---
+
+## Screenshots 📸 -
+
+### <img src="./README-PICS/login.png"/>
+
+### <img src="./README-PICS/inventory-list.png"/>
+
+### <img src="./README-PICS/missing.png"/>
+
+### <img src="./README-PICS/end.png"/>
 
 ---
 
