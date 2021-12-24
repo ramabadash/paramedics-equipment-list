@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { workerLogin } from '../actions/workerActions';
+// Pop Up messages
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 //Style
 import '../styles/EntryForm.css';
 
@@ -16,11 +19,21 @@ function EntryForm() {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
+  // PopUp error message
+  const notify = message =>
+    toast.error(`${message}`, {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
   const handleSubmit = () => {
     if (!fullName || !date || !ambulanceNumber || !shift) {
-      // TODO - add error alert
-      console.log('missing details');
+      notify('Please fill all details');
       return;
     } else {
       dispatch(workerLogin(fullName, date, ambulanceNumber, shift)); // Save to state
@@ -30,6 +43,17 @@ function EntryForm() {
 
   return (
     <div className='entry-form-container'>
+      <ToastContainer
+        position='top-right'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <h1>Welcome to the shift!</h1>
       <h2>Enter your details:</h2>
       <div className='input-form-container'>
@@ -64,7 +88,7 @@ function EntryForm() {
           <option value='night'>Night</option>
         </select>
       </div>
-      <button onClick={handleSubmit}>
+      <button onClick={handleSubmit} className='next-btn'>
         Continue to inventory list <i className='far fa-hand-point-right'></i>
       </button>
     </div>

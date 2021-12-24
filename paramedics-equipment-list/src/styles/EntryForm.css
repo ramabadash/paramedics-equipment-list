@@ -46,7 +46,7 @@ h2 {
 
 /***** BUTTONS *****/
 
-.entry-form-container button {
+.next-btn {
   border-radius: 0.5em;
   font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
