@@ -36,6 +36,7 @@
 #### Add new item: ➕
 
 - **If the item is not listed you can add it at the bottom of the table**
+- **You can delete items you have added at the click of a button**
 
 ### End screen - 🚑
 

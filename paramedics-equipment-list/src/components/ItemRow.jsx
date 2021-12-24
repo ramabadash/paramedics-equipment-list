@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+// Actions
 import { deleteItem } from '../actions/equipmentActions';
 
 function ItemRow({ item, i, setMissingItems }) {
@@ -25,14 +26,14 @@ function ItemRow({ item, i, setMissingItems }) {
     const quantity = e.target.value;
     setCurrentQuantity(quantity);
 
-    // If missing item is already 0
+    // If missing item is above 0
     if (currentQuantity < item.fullQuantity) {
       setMissingItems(prevState => {
-        const UpdateItems = [...prevState]; // Copy the array
+        const updateItems = [...prevState]; // Copy the array
         const missingQuantity =
           item.fullQuantity - quantity < 0 ? 0 : item.fullQuantity - quantity;
-        UpdateItems[i].missing = missingQuantity; // Update the missing quantity of an item
-        return UpdateItems;
+        updateItems[i].missing = missingQuantity; // Update the missing quantity of an item
+        return updateItems;
       });
     }
   };

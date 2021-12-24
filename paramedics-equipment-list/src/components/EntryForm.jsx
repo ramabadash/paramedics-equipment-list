@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
+// Actions
 import { workerLogin } from '../actions/workerActions';
 // Pop Up messages
 import { ToastContainer, toast } from 'react-toastify';
@@ -19,6 +20,7 @@ function EntryForm() {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
+
   // PopUp error message
   const notify = message =>
     toast.error(`${message}`, {

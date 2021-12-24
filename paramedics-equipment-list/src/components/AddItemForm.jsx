@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+// Actions
 import { addItem } from '../actions/equipmentActions';
 // Pop Up messages
 import { ToastContainer, toast } from 'react-toastify';

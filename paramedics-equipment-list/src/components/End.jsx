@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+// Actions
 import { reset as resetEquipment } from '../actions/equipmentActions';
 import { reset as resetWorker } from '../actions/workerActions';
-import { useNavigate } from 'react-router-dom';
 // Style
 import '../styles/End.css';
 
@@ -20,10 +21,12 @@ function End({ isLogged }) {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
+
   // Show and hide missing items list
-  const NavigateToMissingList = () => {
+  const navigateToMissingList = () => {
     navigate('/missing');
   };
+
   // End and reset
   const handleEnd = () => {
     dispatch(resetEquipment());
@@ -37,7 +40,7 @@ function End({ isLogged }) {
         <li onClick={handleEnd} className='end-btn'>
           End <i className='far fa-times-circle'></i>
         </li>
-        <li onClick={NavigateToMissingList} className='show-btn'>
+        <li onClick={navigateToMissingList} className='show-btn'>
           Show me the missing items
         </li>
       </ul>

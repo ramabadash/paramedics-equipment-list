@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+// Actions
 import { reset as resetEquipment } from '../actions/equipmentActions';
 import { reset as resetWorker } from '../actions/workerActions';
 // Style
@@ -12,6 +13,7 @@ function MissingItems({ isLogged }) {
   const missingItemsList = useSelector(
     ({ equipmentReducer }) => equipmentReducer.shiftList
   );
+
   // Get is logged
   const logged = useSelector(({ workerReducer }) => workerReducer.logged);
 
@@ -24,6 +26,7 @@ function MissingItems({ isLogged }) {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
+
   // End and reset
   const handleEnd = () => {
     dispatch(resetEquipment());

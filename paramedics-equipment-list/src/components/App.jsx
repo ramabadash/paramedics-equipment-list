@@ -1,10 +1,10 @@
 import React from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+// Components
 import EntryForm from './EntryForm';
 import InventoryList from './InventoryList';
 import End from './End';
 import MissingItems from './MissingItems';
-import { Routes, Route } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 
 // Style
 import '../styles/App.css';

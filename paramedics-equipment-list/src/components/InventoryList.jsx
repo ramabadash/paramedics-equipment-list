@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+// Actions
+import { submitEquipmentForm } from '../actions/equipmentActions';
+// Components
 import AddItemForm from './AddItemForm';
 import ItemRow from './ItemRow';
-import { submitEquipmentForm } from '../actions/equipmentActions';
-import { useNavigate } from 'react-router-dom';
 // Style
 import '../styles/InventoryList.css';
 
