@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/paramedics-equipment-list/static/css/main.bf6cb1f0.css",
+    "main.js": "/paramedics-equipment-list/static/js/main.095b00dd.js",
+    "index.html": "/paramedics-equipment-list/index.html",
+    "main.bf6cb1f0.css.map": "/paramedics-equipment-list/static/css/main.bf6cb1f0.css.map",
+    "main.095b00dd.js.map": "/paramedics-equipment-list/static/js/main.095b00dd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf6cb1f0.css",
+    "static/js/main.095b00dd.js"
+  ]
+}
