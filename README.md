@@ -18,7 +18,7 @@
 
 ## My app -
 
-### Visit my app - ✨✨
+### Visit my app - ✨https://ramabadash.github.io/paramedics-equipment-list/✨
 
 ### Login form - 🔑
 
