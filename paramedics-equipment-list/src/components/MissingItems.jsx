@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 // Actions
 import { reset as resetEquipment } from '../actions/equipmentActions';
 import { reset as resetWorker } from '../actions/workerActions';
+// Components
+import MissingItem from './MissingItem';
 // Style
 import '../styles/MissingItems.css';
 
@@ -45,27 +47,14 @@ function MissingItems({ isLogged }) {
         </li>
       </ul>
       <h2>Missing item's</h2>
-      <div className='table-container'>
-        <table>
-          <thead>
-            <tr>
-              <th>Item's name</th>
-              <th>Missing</th>
-            </tr>
-          </thead>
-          <tbody>
-            {missingItemsList.map((item, index) => {
-              if (item.missing !== 0) {
-                return (
-                  <tr key={index}>
-                    <td>{item.name}</td>
-                    <td>{item.missing}</td>
-                  </tr>
-                );
-              }
-            })}
-          </tbody>
-        </table>
+      <div className='list-container'>
+        <ul className='missing-item-list'>
+          {missingItemsList.map((item, index) => {
+            if (item.missing !== 0) {
+              return <MissingItem index={index} item={item} />;
+            }
+          })}
+        </ul>
       </div>
     </div>
   );

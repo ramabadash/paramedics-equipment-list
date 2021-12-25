@@ -45,6 +45,7 @@
 ### The missing items list- 📃❌
 
 - **Only the missing items are displayed and how much is missing**
+- **You can mark V on the items you have completed and they will be marked this way by a cross line**
 
 ---
 
